@@ -8,9 +8,9 @@ def es3(): Unit =
 
 def positive(): Unit =
   def positive1(x: Int): String = x match
-    case n if n >= 0 => "positive"
+    case x if x >= 0 => "positive"
     case _ => "negative"
-  
+
 
   val positive2: Int => String = _ match
     case n if n >= 0 => "positive"
@@ -23,16 +23,16 @@ def neg(): Unit =
   def empty1(string: String): Boolean = string == ""
   println(empty1("ciao"))
 
-  def negMethod(predicate: String => Boolean): String => Boolean = string => !predicate(string)
+  def neg1(predicate: String => Boolean): String => Boolean = string => !predicate(string)
 
-  val notEmpty1 = negMethod(empty1)
+  val notEmpty1 = neg1(empty1)
   println(notEmpty1("ciao"))
   println(notEmpty1(""))
   println(notEmpty1("ciao") && !notEmpty1(""))
 
   val empty2: String => Boolean = _ == ""
-  val negVal: (String => Boolean) => String => Boolean = predicate => string => !predicate(string)
-  val notEmpty2 = negVal(empty2)
+  val neg2: (String => Boolean) => String => Boolean = predicate => string => !predicate(string)
+  val notEmpty2 = neg2(empty2)
   println(notEmpty2("ciao"))
   println(notEmpty2(""))
   println(notEmpty2("ciao") && !notEmpty2(""))
