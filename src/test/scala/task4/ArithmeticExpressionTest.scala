@@ -47,3 +47,12 @@ class ArithmeticExpressionTest:
     val n2 = 15
     val res = Operations.show(Add(Literal(n1), Literal(n2)))
     assertEquals("(10 + 15)", res)
+
+  @Test
+  def testShowMulCorrectness(): Unit =
+    val n1 = 4
+    val n2 = 3
+    val res = Operations.show(Multiply(Literal(n1), Literal(n2)))
+    assertEquals("(4 * 3)", res)
+
+

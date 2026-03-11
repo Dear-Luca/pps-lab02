@@ -17,6 +17,7 @@ object Operations:
   def show(expr: Expr): String = expr match
     case Literal(n) => s"$n"
     case Add(e1, e2) => "(" + show(e1) + " + " + show(e2) + ")"
+    case Multiply(e1, e2) => "(" + show(e1) + " * " + show(e2) + ")"
 
 
 
