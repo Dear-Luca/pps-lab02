@@ -55,4 +55,12 @@ class ArithmeticExpressionTest:
     val res = Operations.show(Multiply(Literal(n1), Literal(n2)))
     assertEquals("(4 * 3)", res)
 
-
+  @Test
+  def testShowFullExpressionCorrectness(): Unit =
+    val res = Operations.show(
+      Add(
+        Add(Literal(3), Literal(7)),
+        Multiply(Literal(5), Literal(6))
+      )
+    )
+    assertEquals("((3 + 7) + (5 * 6))", res)
