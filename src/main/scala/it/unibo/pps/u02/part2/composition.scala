@@ -1,4 +1,4 @@
-package it.unibo.pps.u02.task2
+package it.unibo.pps.u02.part2
 
 @main
 def es5(): Unit =

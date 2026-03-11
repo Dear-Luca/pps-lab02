@@ -1,4 +1,4 @@
-package it.unibo.pps.u02.task2
+package it.unibo.pps.u02.part2
 
 @main
 def es3(): Unit =
@@ -10,6 +10,7 @@ def positive(): Unit =
   def positive1(x: Int): String = x match
     case n if n >= 0 => "positive"
     case _ => "negative"
+  
 
   val positive2: Int => String = _ match
     case n if n >= 0 => "positive"
