@@ -2,7 +2,11 @@ package it.unibo.pps.u02.task2
 
 @main
 def es3(): Unit =
-  // positive
+  positive()
+  neg()
+
+
+def positive(): Unit =
   def positiveMethod(x: Int): String = x match
     case n if n >= 0 => "positive"
     case _ => "negative"
@@ -11,11 +15,10 @@ def es3(): Unit =
     case n if n >= 0 => "positive"
     case _ => "negative"
 
-
   println(positiveMethod(-9))
   println(positiveVal(9))
 
-  // neg
+def neg(): Unit =
   def emptyMethod(string: String): Boolean = string == ""
   println(emptyMethod("ciao"))
 
