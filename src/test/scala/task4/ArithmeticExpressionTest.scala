@@ -10,21 +10,21 @@ class ArithmeticExpressionTest:
   def testLiteralCorrectness(): Unit =
     val n = 5
     val res = Operations.evaluate(Literal(n))
-    assertEquals(n, res, 0)
+    assertEquals(n, res)
 
   @Test
   def testSumCorrectness(): Unit =
     val n1 = 5
     val n2 = 4
     val res = Operations.evaluate(Add(Literal(n1), Literal(n2)))
-    assertEquals(n1 + n2, res, 0)
+    assertEquals(n1 + n2, res)
 
   @Test
   def testMulCorrectness(): Unit =
     val n1 = 5
     val n2 = 4
     val res = Operations.evaluate(Multiply(Literal(n1), Literal(n2)))
-    assertEquals(n1 * n2, res, 0)
+    assertEquals(n1 * n2, res)
 
   @Test
   def testFullExpressionCorrectness(): Unit =
@@ -32,6 +32,12 @@ class ArithmeticExpressionTest:
     val n2 = 3
     val n3 = 6
     val n4 = 5
-
     val res = Operations.evaluate(Add(Add(Literal(n1), Literal(n2)), Multiply(Literal(n3), Literal(n4))))
-    assertEquals((n1 + n2) + (n3 * n4) , res, 0.0)
+    assertEquals((n1 + n2) + (n3 * n4) , res)
+
+  @Test
+  def testShowLiteralCorrectness(): Unit =
+    val n = 42
+    val res = Operations.show(Literal(n))
+    assertEquals("42", res)
+
