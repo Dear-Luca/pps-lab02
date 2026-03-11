@@ -41,3 +41,9 @@ class ArithmeticExpressionTest:
     val res = Operations.show(Literal(n))
     assertEquals("42", res)
 
+  @Test
+  def testShowAddCorrectness(): Unit =
+    val n1 = 10
+    val n2 = 15
+    val res = Operations.show(Add(Literal(n1), Literal(n2)))
+    assertEquals("(10 + 15)", res)
