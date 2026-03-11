@@ -57,10 +57,10 @@ class ArithmeticExpressionTest:
 
   @Test
   def testShowFullExpressionCorrectness(): Unit =
-    val n1 = 7
-    val n2 = 3
-    val n3 = 6
-    val n4 = 5
+    val n1 = 3
+    val n2 = 7
+    val n3 = 5
+    val n4 = 6
     val res = Operations.show(
       Add(
         Add(
