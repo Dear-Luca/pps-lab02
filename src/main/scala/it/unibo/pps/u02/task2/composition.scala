@@ -19,9 +19,3 @@ def composition(): Unit =
   val c2: (Int => Int, Int => Int) => Int => Int = (f, g) => x => f(g(x))
 
   println(c2(_ - 1, _ * 2)(5))
-
-
-
-
-
-

@@ -7,31 +7,31 @@ def es3(): Unit =
 
 
 def positive(): Unit =
-  def positiveMethod(x: Int): String = x match
+  def positive1(x: Int): String = x match
     case n if n >= 0 => "positive"
     case _ => "negative"
 
-  val positiveVal: Int => String = _ match
+  val positive2: Int => String = _ match
     case n if n >= 0 => "positive"
     case _ => "negative"
 
-  println(positiveMethod(-9))
-  println(positiveVal(9))
+  println(positive1(-9))
+  println(positive2(9))
 
 def neg(): Unit =
-  def emptyMethod(string: String): Boolean = string == ""
-  println(emptyMethod("ciao"))
+  def empty1(string: String): Boolean = string == ""
+  println(empty1("ciao"))
 
   def negMethod(predicate: String => Boolean): String => Boolean = string => !predicate(string)
 
-  val notEmpty = negMethod(emptyMethod)
-  println(notEmpty("ciao"))
-  println(notEmpty(""))
-  println(notEmpty("ciao") && !notEmpty(""))
+  val notEmpty1 = negMethod(empty1)
+  println(notEmpty1("ciao"))
+  println(notEmpty1(""))
+  println(notEmpty1("ciao") && !notEmpty1(""))
 
-  val emptyVal: String => Boolean = _ == ""
+  val empty2: String => Boolean = _ == ""
   val negVal: (String => Boolean) => String => Boolean = predicate => string => !predicate(string)
-  val notEmpty2 = negVal(emptyVal)
+  val notEmpty2 = negVal(empty2)
   println(notEmpty2("ciao"))
   println(notEmpty2(""))
   println(notEmpty2("ciao") && !notEmpty2(""))
