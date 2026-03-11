@@ -34,3 +34,23 @@ class OptionalIntTest:
     val opt: OptionalInt = Empty()
     val res = OptionalInt.mapInt(opt)(operation)
     assertEquals(Empty(), res)
+
+  @Test def testFilterWithNonEmptyOptionalAndTrueCondition(): Unit =
+    val filter: Int => Boolean = _ > 5
+    val v1 = 8
+    val opt: OptionalInt = Just(v1)
+    val res = OptionalInt.filter(opt)(filter)
+    assertEquals(Just(v1), res)
+
+  @Test def testFilterWithNonEmptyOptionalAndFalseCondition(): Unit =
+    val filter: Int => Boolean = _ > 5
+    val v1 = 4
+    val opt: OptionalInt = Just(v1)
+    val res = OptionalInt.filter(opt)(filter)
+    assertEquals(Empty(), res)
+
+  @Test def testFilterWithEmptyOptional(): Unit =
+    val filter: Int => Boolean = _ > 5
+    val opt: OptionalInt = Empty()
+    val res = OptionalInt.filter(opt)(filter)
+    assertEquals(Empty(), res)
